@@ -1,0 +1,12 @@
+---
+- import_tasks: disable_guestuser.yml
+  tags: ubuntu_desktop_disable_guestuser
+- import_tasks: disable_autolock.yml
+  tags: ubuntu_desktop_disable_autolock
+- import_tasks: launcher.yml
+  tags: ubuntu_desktop_launcher
+- import_tasks: autologin.yml
+  tags: ubuntu_desktop_autologin
+- import_tasks: chromium_keyring.yml
+  tags: ubuntu_desktop_chromium_keyring
+- meta: flush_handlers

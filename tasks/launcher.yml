@@ -1,0 +1,17 @@
+---
+ # see https://askubuntu.com/questions/846704/changing-gsettings-for-another-user-from-an-ansible-script-started-by-vagrant/967632
+- name: set icons/applications (with Firefox)
+  dconf:
+    key: /com/canonical/unity/launcher/favorites
+    value: "{{ ubuntu_desktop_launcher_favorites_firefox }}"
+    state: present
+  notify: restart lightdm
+  when: ubuntu_desktop_browser is 'firefox'
+
+- name: set icons/applications (with Chromium)
+  dconf:
+    key: /com/canonical/unity/launcher/favorites
+    value: "{{ ubuntu_desktop_launcher_favorites_chromium }}"
+    state: present
+  notify: restart lightdm
+  when: ubuntu_desktop_browser is 'chromium'

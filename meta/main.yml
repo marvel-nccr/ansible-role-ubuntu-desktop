@@ -1,0 +1,16 @@
+---
+allow_duplicates: no
+
+galaxy_info:
+  author: "MARVEL NCCR"
+  description: "An ansible role that installs & configures Ubuntu desktop on plain Ubuntu."
+  license: MIT
+  min_ansible_version: 2.5
+  platforms:
+    - name: Ubuntu
+      versions:
+      - xenial
+  galaxy_tags:
+    - ubuntu
+    - application
+    - science
