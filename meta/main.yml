@@ -14,3 +14,7 @@ galaxy_info:
     - ubuntu
     - application
     - science
+
+dependencies:
+  - role: gantsign.default-web-browser
+    version: 3.1.0

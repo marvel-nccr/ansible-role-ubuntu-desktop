@@ -1,4 +1,6 @@
 ---
+- import_tasks: packages.yml
+  tags: ubuntu_desktop_packages
 - import_tasks: disable_guestuser.yml
   tags: ubuntu_desktop_disable_guestuser
 - import_tasks: disable_autolock.yml

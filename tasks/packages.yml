@@ -1,5 +1,6 @@
 - name: Install ubuntu-desktop (apt)
   become: true
+  become_user: "{{ root_user }}"
   apt:
       name: "{{item}}"
       state: latest
@@ -11,12 +12,14 @@
 
 - name: Start lightdm service to get a graphical login
   become: true
+  become_user: "{{ root_user }}"
   service:
     name: lightdm
     state: started
 
 - name: install chromium-browser
   become: true
+  become_user: "{{ root_user }}"
   apt:
       name: "chromium-browser"
       state: latest

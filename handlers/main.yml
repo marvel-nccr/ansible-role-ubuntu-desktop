@@ -1,6 +1,7 @@
 ---
 - name: restart lightdm
   become: true
+  become_user: "{{ root_user }}"
   service:
     name: lightdm
     state: restarted
