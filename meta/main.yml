@@ -16,5 +16,9 @@ galaxy_info:
     - science
 
 dependencies:
-  - role: gantsign.default-web-browser
-    version: 3.1.0
+# Need to install chrome *before* running role
+#  - role: gantsign.default-web-browser
+#    version: 3.1.0
+#    vars:
+#      default_web_browser: chromium-browser
+#    when: ubuntu_desktop_browser == 'chromium'

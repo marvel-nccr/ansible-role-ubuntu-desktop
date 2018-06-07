@@ -10,6 +10,15 @@
       #- lxde-common
   notify: apt clean
 
+- name: Install packages (pip)
+  become: true
+  become_user: "{{ root_user }}"
+  pip:
+      name: "{{item}}"
+      state: latest
+  with_items:
+      - psutil
+
 - name: Start lightdm service to get a graphical login
   become: true
   become_user: "{{ root_user }}"
@@ -24,11 +33,11 @@
       name: "chromium-browser"
       state: latest
   notify: apt clean
-  when: common_browser is 'chromium'
+  when: ubuntu_desktop_browser == 'chromium'
 
 - name: 
   import_role: 
     name: gantsign.default-web-browser
   vars:
     default_web_browser: chromium-browser
-  when: common_browser is 'chromium'
+  when: ubuntu_desktop_browser == 'chromium'
