@@ -36,7 +36,7 @@
   when: ubuntu_desktop_browser == 'chromium'
 
 - name: 
-  import_role: 
+  include_role: 
     name: gantsign.default-web-browser
   vars:
     default_web_browser: chromium-browser
