@@ -19,11 +19,11 @@
   with_items:
       - psutil
 
-- name: Start lightdm service to get a graphical login
+- name: Start gdm3 service to get a graphical login
   become: true
   become_user: "{{ root_user }}"
   service:
-    name: lightdm
+    name: gdm3
     state: started
 
 - name: install chromium-browser
