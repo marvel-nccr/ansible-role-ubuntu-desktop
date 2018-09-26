@@ -33,11 +33,11 @@
       name: "chromium-browser"
       state: latest
   notify: apt clean
-  when: ubuntu_desktop_browser == 'chromium'
+  when: ubuntu_desktop_browser == 'chromium-browser'
 
 - name: 
   include_role: 
     name: gantsign.default-web-browser
   vars:
     default_web_browser: chromium-browser
-  when: ubuntu_desktop_browser == 'chromium'
+  when: ubuntu_desktop_browser == 'chromium-browser'

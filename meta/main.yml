@@ -22,4 +22,4 @@ galaxy_info:
 #    version: 3.1.0
 #    vars:
 #      default_web_browser: chromium-browser
-#    when: ubuntu_desktop_browser == 'chromium'
+#    when: ubuntu_desktop_browser == 'chromium-browser'

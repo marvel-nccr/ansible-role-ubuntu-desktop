@@ -12,4 +12,4 @@
     key: /org/gnome/shell/favorite-apps
     value: "{{ ubuntu_desktop_launcher_favorites_chromium }}"
     state: present
-  when: ubuntu_desktop_browser == 'chromium'
+  when: ubuntu_desktop_browser == 'chromium-browser'
