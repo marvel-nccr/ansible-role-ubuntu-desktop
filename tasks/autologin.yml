@@ -12,7 +12,8 @@
     value: "true"
   - option: AutomaticLogin
     value: "{{ ubuntu_desktop_vm_user }}"
-
+  - option: InitialSetupEnable
+    value: "false"
 
     #- name: disable autologin timeout
     #  become: true
