@@ -2,22 +2,19 @@
   become: true
   become_user: "{{ root_user }}"
   apt:
-      name: "{{item}}"
-      state: latest
-  with_items:
+      name:
       - ubuntu-desktop
       #- lxde
       #- lxde-common
+      state: latest
   notify: apt clean
 
 - name: Install packages (pip)
   become: true
   become_user: "{{ root_user }}"
   pip:
-      name: "{{item}}"
+      name: "psutil"
       state: latest
-  with_items:
-      - psutil
 
 - name: Start gdm3 service to get a graphical login
   become: true

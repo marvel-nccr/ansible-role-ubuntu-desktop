@@ -1,15 +1,4 @@
 ---
-#- name: disable guest account
-#  become: true
-#  become_user: "{{ root_user }}"
-#  ini_file: 
-#    path: /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
-#    section: "Seat:*"
-#    option: "allow-guest"
-#    value: "false"
-#  notify: restart lightdm 
-#  register: disable_guest_account
-
 - name: hide vagrant user on login screen
   become: true
   become_user: "{{ root_user }}"
