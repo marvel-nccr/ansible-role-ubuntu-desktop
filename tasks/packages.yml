@@ -7,8 +7,8 @@
       - ubuntu-desktop
       # - lxde
       # - lxde-common
+      - python-pip
     state: latest
-  notify: apt clean
 
 - name: Install packages (pip)
   become: true
@@ -30,7 +30,6 @@
   apt:
     name: "chromium-browser"
     state: latest
-  notify: apt clean
   when: ubuntu_desktop_browser == 'chromium-browser'
 
 - name:
