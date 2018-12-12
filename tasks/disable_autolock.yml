@@ -1,5 +1,5 @@
 ---
-# Note: 
+# Note:
 # * dconf settings are user specific!
 # * check settings: "dconf dump /"
 - name: disable autolock after idle
@@ -30,12 +30,12 @@
     - /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type
   notify: restart gdm3
 
-##Note: Not sure this is still needed in 18.04
-#- name: disable autolock after idle
-#  dconf:
-#    key: "{{ item }}"
-#    value: "false"
-#    state: present
-#  with_items:
-#    - /org/gnome/desktop/screensaver/idle-activation-enabled
-#    - /org/gnome/desktop/screensaver/lock-enabled
+# #Note: Not sure this is still needed in 18.04
+# - name: disable autolock after idle
+#   dconf:
+#     key: "{{ item }}"
+#     value: "false"
+#     state: present
+#   with_items:
+#     - /org/gnome/desktop/screensaver/idle-activation-enabled
+#     - /org/gnome/desktop/screensaver/lock-enabled

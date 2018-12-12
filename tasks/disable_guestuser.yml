@@ -2,7 +2,7 @@
 - name: hide vagrant user on login screen
   become: true
   become_user: "{{ root_user }}"
-  ini_file: 
+  ini_file:
     path: /var/lib/AccountsService/users/vagrant
     section: "User"
     option: "SystemAccount"

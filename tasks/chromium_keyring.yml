@@ -1,8 +1,8 @@
 ---
 - name: don't use keyring in chromium
-  become: True
+  become: true
   become_user: "{{ root_user }}"
-  lineinfile: 
+  lineinfile:
     path: /etc/chromium-browser/default
     line: CHROMIUM_FLAGS="--password-store=basic"
     regexp: "^CHROMIUM_FLAGS="
