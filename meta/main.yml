@@ -1,11 +1,12 @@
 ---
-allow_duplicates: no
+allow_duplicates: false
 
 galaxy_info:
+  role_name: ubuntu-desktop
   author: "MARVEL NCCR"
   description: "An ansible role that installs & configures Ubuntu desktop on plain Ubuntu."
   license: MIT
-  min_ansible_version: 2.5
+  min_ansible_version: 2.7
   platforms:
     - name: Ubuntu
       versions:
@@ -15,8 +16,8 @@ galaxy_info:
     - application
     - science
 
-dependencies:
 # Need to install chrome *before* running role
+# dependencies:
 #  - role: gantsign.default-web-browser
 #    version: 3.1.0
 #    vars:
