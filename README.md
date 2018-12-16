@@ -12,9 +12,11 @@ See `defaults/main.yml`
 
 ## Example Playbook
 
-  - hosts: servers
-    roles:
-    - role: marvel-nccr.ubuntu-desktop
+```yaml
+- hosts: servers
+  roles:
+  - role: marvel-nccr.ubuntu-desktop
+```
 
 ## License
 
