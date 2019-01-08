@@ -12,8 +12,20 @@
       value: "true"
     - option: AutomaticLogin
       value: "{{ ubuntu_desktop_vm_user }}"
+    # This does not seem to have an effect unfortunately
+    # (welcome screen still shown on first login)
     - option: InitialSetupEnable
       value: "false"
+
+# see: https://askubuntu.com/a/1030095/715125
+# Note: gnome-initial-setup is only *recommended* by ubuntu-desktop
+- name: remove gnome-initial-setup
+  become: true
+  become_user: "{{ root_user }}"
+  apt:
+    name:
+      - gnome-initial-setup
+    state: absent
 
 # - name: disable autologin timeout
 #   become: true
