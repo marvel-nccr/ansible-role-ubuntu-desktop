@@ -8,14 +8,12 @@
       # - lxde
       # - lxde-common
       - python-pip
-    state: latest
 
 - name: Install packages (pip)
   become: true
   become_user: "{{ root_user }}"
   pip:
     name: "psutil"
-    state: latest
 
 - name: Start gdm3 service to get a graphical login
   become: true
@@ -29,7 +27,6 @@
   become_user: "{{ root_user }}"
   apt:
     name: "chromium-browser"
-    state: latest
   when: ubuntu_desktop_browser == 'chromium-browser'
 
 - name:

@@ -18,7 +18,7 @@
       value: "false"
 
 # see: https://askubuntu.com/a/1030095/715125
-# Note: gnome-initial-setup is only *recommended* by ubuntu-desktop
+# Note: gnome-initial-setup is only *recommended* by ubuntu_desktop
 - name: remove gnome-initial-setup
   become: true
   become_user: "{{ root_user }}"

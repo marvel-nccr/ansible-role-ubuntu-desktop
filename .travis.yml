@@ -8,7 +8,7 @@ services:
 
 env:
   global:
-    - ANSIBLE_ROLE: ubuntu-desktop
+    - ANSIBLE_ROLE: ubuntu_desktop
 
 matrix:
   include:
@@ -29,7 +29,7 @@ install:
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
   - cd ../
-  - mv ansible-role-$ANSIBLE_ROLE marvel-nccr.$ANSIBLE_ROLE
+  - mv ansible-role-ubuntu-desktop marvel-nccr.$ANSIBLE_ROLE
   - cd marvel-nccr.$ANSIBLE_ROLE
 
 script:

@@ -11,4 +11,4 @@
     - run_tests: true
 
   roles:
-    - role: "marvel-nccr.ubuntu-desktop"
+    - role: "marvel-nccr.ubuntu_desktop"
