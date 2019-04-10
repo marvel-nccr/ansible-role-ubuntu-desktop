@@ -1,43 +1,37 @@
+---
 - name: Install ubuntu-desktop (apt)
   become: true
   become_user: "{{ root_user }}"
   apt:
-      name: "{{item}}"
-      state: latest
-  with_items:
+    name:
       - ubuntu-desktop
-      #- lxde
-      #- lxde-common
-  notify: apt clean
+      # - lxde
+      # - lxde-common
+      - python-pip
 
 - name: Install packages (pip)
   become: true
   become_user: "{{ root_user }}"
   pip:
-      name: "{{item}}"
-      state: latest
-  with_items:
-      - psutil
+    name: "psutil"
 
-- name: Start lightdm service to get a graphical login
+- name: Start gdm3 service to get a graphical login
   become: true
   become_user: "{{ root_user }}"
   service:
-    name: lightdm
+    name: gdm3
     state: started
 
 - name: install chromium-browser
   become: true
   become_user: "{{ root_user }}"
   apt:
-      name: "chromium-browser"
-      state: latest
-  notify: apt clean
-  when: ubuntu_desktop_browser == 'chromium'
+    name: "chromium-browser"
+  when: ubuntu_desktop_browser == 'chromium-browser'
 
-- name: 
-  include_role: 
+- name:
+  include_role:
     name: gantsign.default-web-browser
   vars:
     default_web_browser: chromium-browser
-  when: ubuntu_desktop_browser == 'chromium'
+  when: ubuntu_desktop_browser == 'chromium-browser'

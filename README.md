@@ -1,10 +1,10 @@
-# Ansible Role: marvel-nccr.ubuntu-desktop
+# Ansible Role: marvel-nccr.ubuntu_desktop
 
 An ansible role that installs & configures Ubuntu desktop on plain Ubuntu.
 
 ## Installation
 
-`ansible-galaxy install marvel-nccr.ubuntu-desktop`
+`ansible-galaxy install marvel-nccr.ubuntu_desktop`
 
 ## Role Variables
 
@@ -12,9 +12,11 @@ See `defaults/main.yml`
 
 ## Example Playbook
 
-  - hosts: servers
-    roles:
-    - role: marvel-nccr.ubuntu-desktop
+```yaml
+- hosts: servers
+  roles:
+  - role: marvel-nccr.ubuntu_desktop
+```
 
 ## License
 
