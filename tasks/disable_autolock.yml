@@ -21,6 +21,8 @@
   notify: restart gdm3
 
 - name: disable automatic suspend
+  become: true
+  become_user: "{{ ansible_user }}"
   dconf:
     key: "{{ item }}"
     value: "'nothing'"
