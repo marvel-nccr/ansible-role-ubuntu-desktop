@@ -8,4 +8,4 @@ ubuntu_desktop_launcher_favorites_firefox: "['org.gnome.Nautilus.desktop', 'fire
 # yamllint disable-line rule:line-length
 ubuntu_desktop_launcher_favorites_chromium: "['org.gnome.Nautilus.desktop', 'chromium-browser.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.gedit.desktop', 'libreoffice-writer.desktop', 'libreoffice-calc.desktop', 'org.gnome.Software.desktop', 'gnome-control-center.desktop']"
 
-root_user: root
+dconf_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"

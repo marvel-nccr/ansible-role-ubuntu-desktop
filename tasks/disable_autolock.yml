@@ -22,7 +22,7 @@
 
 - name: disable automatic suspend
   become: true
-  become_user: "{{ ansible_user }}"
+  become_user: "{{ dconf_user }}"
   dconf:
     key: "{{ item }}"
     value: "'nothing'"

@@ -1,12 +1,10 @@
 ---
 - name: apt-get clean
   become: true
-  become_user: "{{ root_user }}"
   command: sudo apt-get clean
 
 - name: wipe apt lists
   become: true
-  become_user: "{{ root_user }}"
   shell: "rm -rf /var/lib/apt/lists/*"
 
 - name: wipe user cache
@@ -16,7 +14,6 @@
 
 - name: wipe root cache
   become: true
-  become_user: "{{ root_user }}"
   file:
     state: absent
     path: "~/.cache"

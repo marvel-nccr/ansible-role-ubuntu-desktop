@@ -1,7 +1,6 @@
 ---
 - name: Install ubuntu-desktop (apt)
   become: true
-  become_user: "{{ root_user }}"
   apt:
     name:
       - ubuntu-desktop
@@ -11,20 +10,17 @@
 
 - name: Install packages (pip)
   become: true
-  become_user: "{{ root_user }}"
   pip:
     name: "psutil"
 
 - name: Start gdm3 service to get a graphical login
   become: true
-  become_user: "{{ root_user }}"
   service:
     name: gdm3
     state: started
 
 - name: install chromium-browser
   become: true
-  become_user: "{{ root_user }}"
   apt:
     name: "chromium-browser"
   when: ubuntu_desktop_browser == 'chromium-browser'

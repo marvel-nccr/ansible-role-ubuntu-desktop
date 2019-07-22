@@ -1,7 +1,6 @@
 ---
 - name: enable autologin
   become: true
-  become_user: "{{ root_user }}"
   ini_file:
     path: /etc/gdm3/custom.conf
     section: "daemon"
@@ -21,7 +20,6 @@
 # Note: gnome-initial-setup is only *recommended* by ubuntu_desktop
 - name: remove gnome-initial-setup
   become: true
-  become_user: "{{ root_user }}"
   apt:
     name:
       - gnome-initial-setup
@@ -29,7 +27,6 @@
 
 # - name: disable autologin timeout
 #   become: true
-#   become_user: "{{ root_user }}"
 #   ini_file:
 #     path: /etc/lightdm/lightdm.conf.d/12-autologin.conf
 #     section: "Seat:*"

@@ -2,7 +2,7 @@
 # see https://askubuntu.com/questions/846704/changing-gsettings-for-another-user-from-an-ansible-script-started-by-vagrant/967632
 - name: set icons/applications (with Firefox)
   become: true
-  become_user: "{{ ansible_user }}"
+  become_user: "{{ dconf_user }}"
   dconf:
     key: /org/gnome/shell/favorite-apps
     value: "{{ ubuntu_desktop_launcher_favorites_firefox }}"
@@ -11,7 +11,7 @@
 
 - name: set icons/applications (with Chromium)
   become: true
-  become_user: "{{ ansible_user }}"
+  become_user: "{{ dconf_user }}"
   dconf:
     key: /org/gnome/shell/favorite-apps
     value: "{{ ubuntu_desktop_launcher_favorites_chromium }}"
