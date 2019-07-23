@@ -3,6 +3,8 @@
 # * dconf settings are user specific!
 # * check settings: "dconf dump /"
 - name: disable autolock after idle
+  become: true
+  become_user: "{{ ubuntu_desktop_vm_user }}"
   dconf:
     key: "{{ item }}"
     value: "true"
@@ -12,6 +14,8 @@
   notify: restart gdm3
 
 - name: set idle timeout to "never"
+  become: true
+  become_user: "{{ ubuntu_desktop_vm_user }}"
   dconf:
     key: "{{ item }}"
     value: "uint32 0"
@@ -20,15 +24,19 @@
     - /org/gnome/desktop/session/idle-delay
   notify: restart gdm3
 
-- name: disable automatic suspend
-  dconf:
-    key: "{{ item }}"
-    value: "'nothing'"
-    state: present
-  with_items:
-    - /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type
-    - /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type
-  notify: restart gdm3
+# # Note: this causes the user to be logged out immediately after login
+# # See https://github.com/marvel-nccr/quantum-mobile/issues/93
+# - name: disable automatic suspend
+#   become: true
+#   become_user: "{{ ubuntu_desktop_vm_user }}"
+#   dconf:
+#     key: "{{ item }}"
+#     value: "'nothing'"
+#     state: present
+#   with_items:
+#     - /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type
+#     - /org/gnome/settings-daemon/plugins/power/sleep-inactive-battery-type
+#   notify: restart gdm3
 
 # #Note: Not sure this is still needed in 18.04
 # - name: disable autolock after idle
