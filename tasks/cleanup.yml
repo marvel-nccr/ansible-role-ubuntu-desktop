@@ -1,10 +1,11 @@
 ---
 - name: apt-get clean
   become: true
-  command: sudo apt-get clean
+  command: apt-get clean
 
 - name: wipe apt lists
   become: true
+  warn: false
   shell: "rm -rf /var/lib/apt/lists/*"
 
 - name: wipe user cache
