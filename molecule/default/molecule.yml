@@ -21,6 +21,7 @@ provisioner:
       x:
         - 301
         - 302
+        - 303
   playbooks:
     converge: playbook.yml
   options:
