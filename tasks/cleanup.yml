@@ -5,7 +5,6 @@
 
 - name: wipe apt lists
   become: true
-  warn: false
   shell: "rm -rf /var/lib/apt/lists/*"
 
 - name: wipe user cache
