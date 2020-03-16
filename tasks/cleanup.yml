@@ -7,12 +7,14 @@
   become: true
   shell: "rm -rf /var/lib/apt/lists/*"
 
-- name: wipe user cache
+- name: wipe vm user cache
+  become: true
+  become_user: "{{ ubuntu_desktop_vm_user }}"
   file:
     state: absent
     path: "~/.cache"
 
-- name: wipe root cache
+- name: wipe root user cache
   become: true
   file:
     state: absent
