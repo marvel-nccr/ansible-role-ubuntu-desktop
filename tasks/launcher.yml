@@ -1,4 +1,3 @@
----
 # see https://askubuntu.com/questions/846704/changing-gsettings-for-another-user-from-an-ansible-script-started-by-vagrant/967632
 - name: set icons/applications (with Firefox)
   become: true

@@ -1,4 +1,3 @@
----
 ubuntu_desktop_browser: firefox
 ubuntu_desktop_vm_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
 

@@ -1,4 +1,3 @@
----
 - name: hide vagrant user on login screen
   become: true
   ini_file:
