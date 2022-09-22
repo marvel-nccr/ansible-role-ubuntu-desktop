@@ -1,4 +1,3 @@
----
 # Note:
 # * dconf settings are user specific!
 # * check settings: "dconf dump /"
@@ -10,7 +9,7 @@
     value: "true"
     state: present
   with_items:
-    - /org/gnome/desktop/lockdown/disable-lock-screen
+  - /org/gnome/desktop/lockdown/disable-lock-screen
   notify: restart gdm3
 
 - name: set idle timeout to "never"
@@ -21,7 +20,7 @@
     value: "uint32 0"
     state: present
   with_items:
-    - /org/gnome/desktop/session/idle-delay
+  - /org/gnome/desktop/session/idle-delay
   notify: restart gdm3
 
 # # Note: this causes the user to be logged out immediately after login

@@ -1,12 +1,11 @@
----
 - name: Install ubuntu-desktop (apt)
   become: true
   apt:
     name:
-      - ubuntu-desktop
+    - ubuntu-desktop
       # - lxde
       # - lxde-common
-      - python3-pip
+    - python3-pip
 
 - name: Install packages (pip)
   become: true

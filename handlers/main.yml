@@ -1,4 +1,3 @@
----
 - name: restart gdm3
   become: true
   service:

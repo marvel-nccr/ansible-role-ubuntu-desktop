@@ -1,4 +1,3 @@
----
 - import_tasks: packages.yml
   tags: ubuntu_desktop_packages
 - import_tasks: disable_guestuser.yml
