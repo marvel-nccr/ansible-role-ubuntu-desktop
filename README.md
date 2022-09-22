@@ -1,10 +1,10 @@
-[![CI](https://github.com/marvel-nccr/ansible-role-ubuntu_desktop/workflows/CI/badge.svg)](https://github.com/marvel-nccr/ansible-role-ubuntu_desktop/actions)
+[![CI](https://github.com/marvel-nccr/ansible-role-ubuntu-desktop/workflows/CI/badge.svg)](https://github.com/marvel-nccr/ansible-role-ubuntu-desktop/actions)
 [![Ansible Role](https://img.shields.io/ansible/role/35372.svg)](https://galaxy.ansible.com/marvel-nccr/ubuntu_desktop)
-[![Release](https://img.shields.io/github/tag/marvel-nccr/ansible-role-ubuntu_desktop.svg)](https://github.com/marvel-nccr/ansible-role-ubuntu_desktop/releases)
+[![Release](https://img.shields.io/github/tag/marvel-nccr/ansible-role-ubuntu-desktop.svg)](https://github.com/marvel-nccr/ansible-role-ubuntu-desktop/releases)
 
 # Ansible Role: marvel-nccr.ubuntu_desktop
 
-Description...
+An ansible role that installs & configures Ubuntu desktop on plain Ubuntu.
 
 ## Installation
 
@@ -31,7 +31,7 @@ After installing [Docker](https://www.docker.com/):
 Clone the repository into a package named `marvel-nccr.ubuntu_desktop` (the folder must be named the same as the Ansible Galaxy name)
 
 ```bash
-git clone https://github.com/marvel-nccr/ansible-role-ubuntu_desktop marvel-nccr.ubuntu_desktop
+git clone https://github.com/marvel-nccr/ansible-role-ubuntu-desktop marvel-nccr.ubuntu_desktop
 cd marvel-nccr.ubuntu_desktop
 ```
 

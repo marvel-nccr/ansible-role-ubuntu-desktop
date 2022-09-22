@@ -4,4 +4,5 @@
     path: /etc/chromium-browser/default
     line: CHROMIUM_FLAGS="--password-store=basic"
     regexp: "^CHROMIUM_FLAGS="
+    create: true
   when: ubuntu_desktop_browser == 'chromium-browser'
