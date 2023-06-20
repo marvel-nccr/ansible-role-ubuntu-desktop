@@ -20,6 +20,10 @@ See `defaults/main.yml`
 - hosts: servers
   roles:
   - role: marvel-nccr.ubuntu_desktop
+  vars:
+    ubuntu_desktop_vm_user: "{{ vm_user }}"
+    ubuntu_desktop_browser: "{{ vm_browser }}"
+    ubuntu_desktop_wm_package: "{{ vm_wm_package }}" # e.g. lxde, ubuntu-desktop, ubuntu-desktop-minimal
 ```
 
 ## Development and testing

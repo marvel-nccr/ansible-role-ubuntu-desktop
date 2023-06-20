@@ -1,10 +1,8 @@
-- name: Install ubuntu-desktop (apt)
+- name: Install wm desktop (apt)
   become: true
   apt:
     name:
-    - ubuntu-desktop
-      # - lxde
-      # - lxde-common
+    - "{{ ubuntu_desktop_wm_package }}" # e.g. lxde, ubuntu-desktop-minimal
     - python3-pip
 
 - name: Install packages (pip)
