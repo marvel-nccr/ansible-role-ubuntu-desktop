@@ -43,7 +43,6 @@ Then run:
 
 ```bash
 pip install -r requirements.txt  # Installs molecule
-ansible-galaxy install marvel-nccr.ubuntu_desktop -p .
 molecule test  # runs tests
 ```
 

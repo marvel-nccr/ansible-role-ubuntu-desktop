@@ -16,40 +16,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v1
       with:
-        python-version: "3.10"
-    - uses: pre-commit/action@v3.0.0
+        python-version: 3.8
+    - uses: pre-commit/action@v2.0.0
 
   molecule:
 
     strategy:
       matrix:
-        distro: [ubuntu2004, ubuntu2204]
+        distro: [ubuntu1804, ubuntu2004]
       fail-fast: false
 
     runs-on: ubuntu-latest
 
     steps:
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       with:
         path: ${{ env.galaxy-name }}
 
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v4
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
       with:
-        python-version: "3.10"
+        python-version: 3.8
+
+    - name: Upgrade pip
+      run: |
+        pip install --upgrade pip
+        pip --version
 
     - name: Install requirements
       run: |
+        pip install wheel
         pip install -r requirements.txt
-      working-directory: ${{ env.galaxy-name }}
-
-    - name: Install role from local directory
-      run: ansible-galaxy install -p . ${{ env.galaxy-name }}
       working-directory: ${{ env.galaxy-name }}
 
     - name: Run molecule
