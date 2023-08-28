@@ -1,7 +1,7 @@
 # Note:
 # * dconf settings are user specific!
 # * check settings: "dconf dump /"
-- name: disable autolock after idle
+- name: Disable autolock after idle
   become: true
   become_user: "{{ ubuntu_desktop_vm_user }}"
   dconf:
@@ -12,7 +12,7 @@
   - /org/gnome/desktop/lockdown/disable-lock-screen
   notify: restart gdm3
 
-- name: set idle timeout to "never"
+- name: Set idle timeout to "never"
   become: true
   become_user: "{{ ubuntu_desktop_vm_user }}"
   dconf:

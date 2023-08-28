@@ -1,4 +1,4 @@
-- name: enable autologin
+- name: Enable autologin
   become: true
   ini_file:
     path: /etc/gdm3/custom.conf
@@ -17,7 +17,7 @@
 
 # see: https://askubuntu.com/a/1030095/715125
 # Note: gnome-initial-setup is only *recommended* by ubuntu_desktop
-- name: remove gnome-initial-setup
+- name: Remove gnome-initial-setup
   become: true
   apt:
     name:

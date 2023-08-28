@@ -1,5 +1,5 @@
 # see https://askubuntu.com/questions/846704/changing-gsettings-for-another-user-from-an-ansible-script-started-by-vagrant/967632
-- name: set icons/applications (with Firefox)
+- name: Set icons/applications (with Firefox)
   become: true
   become_user: "{{ ubuntu_desktop_vm_user }}"
   dconf:
@@ -8,7 +8,7 @@
     state: present
   when: ubuntu_desktop_browser == 'firefox'
 
-- name: set icons/applications (with Chromium)
+- name: Set icons/applications (with Chromium)
   become: true
   become_user: "{{ ubuntu_desktop_vm_user }}"
   dconf:

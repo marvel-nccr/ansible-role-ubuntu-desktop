@@ -1,6 +1,6 @@
 name: CI
 
-on:
+"on":
   push:
     branches: [master]
     tags:
@@ -27,7 +27,7 @@ jobs:
 
     strategy:
       matrix:
-        distro: [ubuntu2004, ubuntu2204]
+        distro: [ubuntu1804, ubuntu2004, ubuntu2204]
       fail-fast: false
 
     runs-on: ubuntu-latest
@@ -45,6 +45,7 @@ jobs:
 
     - name: Install requirements
       run: |
+        pip install --upgrade pip
         pip install -r requirements.txt
       working-directory: ${{ env.galaxy-name }}
 

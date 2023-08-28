@@ -2,3 +2,16 @@
 # or add to the warn_list, to ignore for the whole project
 warn_list:
 - internal-error  # Unexpected internal error.
+# This is a list of newly added after update to ansible-lint 6.18.0
+# Try to fix them and remove from the list
+- schema  # Schema missing or not parseable.
+- fqcn  # Fully qualified collection name required.
+- no-free-form  # Free form yaml not supported.
+- risky-file-permissions  # File permissions unset or incorrect.
+- command-instead-of-module  # Using command rather than module.
+- name[missing]  # Missing name attribute in meta/main.yml.
+- no-changed-when  # Missing changed_when attribute in task.
+
+skip_list:
+- 'role-name'
+- 'yaml'

@@ -1,19 +1,19 @@
-- name: apt-get clean
+- name: Run apt-get clean
   become: true
   command: apt-get clean
 
-- name: wipe apt lists
+- name: Wipe apt lists
   become: true
   shell: "rm -rf /var/lib/apt/lists/*"
 
-- name: wipe vm user cache
+- name: Wipe vm user cache
   become: true
   become_user: "{{ ubuntu_desktop_vm_user }}"
   file:
     state: absent
     path: "~/.cache"
 
-- name: wipe root user cache
+- name: Wipe root user cache
   become: true
   file:
     state: absent
