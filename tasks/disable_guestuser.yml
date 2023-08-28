@@ -1,4 +1,4 @@
-- name: hide vagrant user on login screen
+- name: Hide vagrant user on login screen
   become: true
   ini_file:
     path: /var/lib/AccountsService/users/vagrant

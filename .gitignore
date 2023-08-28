@@ -3,3 +3,6 @@
 .galaxy_install_info
 .vscode/
 .tox/
+
+# ignore all build directories
+marvel-nccr.ubuntu_desktop/*

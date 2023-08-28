@@ -1,4 +1,4 @@
-- name: don't use keyring in chromium
+- name: Don't use keyring in chromium
   become: true
   lineinfile:
     path: /etc/chromium-browser/default

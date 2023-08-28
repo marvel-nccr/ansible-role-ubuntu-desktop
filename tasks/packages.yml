@@ -16,15 +16,15 @@
     name: gdm3
     state: started
 
-- name: install chromium-browser
+- name: Install chromium-browser
   become: true
   apt:
     name: "chromium-browser"
   when: ubuntu_desktop_browser == 'chromium-browser'
 
-- name:
+- name: Set default web browser
   include_role:
     name: gantsign.default-web-browser
   vars:
-    default_web_browser: chromium-browser
+    default_web_browser: chromium-browser # noqa: var-naming[no-role-prefix]
   when: ubuntu_desktop_browser == 'chromium-browser'
