@@ -4,11 +4,7 @@
     name:
     - "{{ ubuntu_desktop_wm_package }}" # e.g. lxde, ubuntu-desktop-minimal
     - python3-pip
-
-- name: Install packages (pip)
-  become: true
-  ansible.builtin.pip:
-    name: "psutil"
+    - python3-psutil
 
 - name: Start gdm3 service to get a graphical login
   become: true
