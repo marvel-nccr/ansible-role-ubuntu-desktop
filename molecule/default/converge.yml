@@ -10,4 +10,4 @@
     when: ansible_os_family == 'Debian'
 
   roles:
-  - role: "marvel_nccr.ubuntu_desktop"
+  - role: "marvel-nccr.ubuntu_desktop"
