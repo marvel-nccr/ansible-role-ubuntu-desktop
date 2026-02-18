@@ -1,30 +1,30 @@
 - name: Install wm desktop (apt)
   become: true
-  apt:
+  ansible.builtin.apt:
     name:
     - "{{ ubuntu_desktop_wm_package }}" # e.g. lxde, ubuntu-desktop-minimal
     - python3-pip
 
 - name: Install packages (pip)
   become: true
-  pip:
+  ansible.builtin.pip:
     name: "psutil"
 
 - name: Start gdm3 service to get a graphical login
   become: true
-  service:
+  ansible.builtin.service:
     name: gdm3
     state: started
 
-- name: install chromium-browser
+- name: Install chromium-browser
   become: true
-  apt:
+  ansible.builtin.apt:
     name: "chromium-browser"
   when: ubuntu_desktop_browser == 'chromium-browser'
 
-- name:
-  include_role:
+- name: Set default web browser
+  ansible.builtin.include_role:
     name: gantsign.default-web-browser
   vars:
-    default_web_browser: chromium-browser
+    default_web_browser: chromium-browser # noqa: var-naming[no-role-prefix]
   when: ubuntu_desktop_browser == 'chromium-browser'
