@@ -2,3 +2,9 @@
 # or add to the warn_list, to ignore for the whole project
 warn_list:
 - internal-error  # Unexpected internal error.
+
+skip_list:
+- role-name  # Galaxy legacy roles can't use namespace field
+
+exclude_paths:
+- molecule/  # Role not installed during linting
