@@ -63,7 +63,7 @@ jobs:
   release:
     name: Publish to ansible-galaxy
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
-    needs: [pre-commit]
+    needs: [pre-commit, molecule]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
