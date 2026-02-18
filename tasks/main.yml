@@ -1,19 +1,26 @@
-- import_tasks: packages.yml
+- name: Install packages
+  ansible.builtin.import_tasks: packages.yml
   tags: ubuntu_desktop_packages
-- import_tasks: disable_guestuser.yml
+- name: Disable guest user
+  ansible.builtin.import_tasks: disable_guestuser.yml
   tags: ubuntu_desktop_disable_guestuser
-- import_tasks: disable_autolock.yml
+- name: Disable autolock
+  ansible.builtin.import_tasks: disable_autolock.yml
   tags: ubuntu_desktop_disable_autolock
-- import_tasks: launcher.yml
+- name: Configure launcher
+  ansible.builtin.import_tasks: launcher.yml
   tags: ubuntu_desktop_launcher
-- import_tasks: autologin.yml
+- name: Configure autologin
+  ansible.builtin.import_tasks: autologin.yml
   tags: ubuntu_desktop_autologin
-- import_tasks: chromium_keyring.yml
+- name: Configure chromium keyring
+  ansible.builtin.import_tasks: chromium_keyring.yml
   tags: ubuntu_desktop_chromium_keyring
 
 - name: Clean up to reduce disk usage
-  include_tasks: cleanup.yml
+  ansible.builtin.include_tasks: cleanup.yml
   tags: ubuntu_desktop_cleanup
   when: clean is defined and clean
 
-- meta: flush_handlers
+- name: Flush handlers
+  ansible.builtin.meta: flush_handlers

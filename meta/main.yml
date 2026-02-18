@@ -2,11 +2,12 @@ allow_duplicates: false
 
 galaxy_info:
   role_name: ubuntu_desktop
+  namespace: marvel_nccr
   author: "MARVEL NCCR"
   # yamllint disable-line rule:line-length
   description: "An ansible role that installs & configures Ubuntu desktop on plain Ubuntu."
   license: MIT
-  min_ansible_version: 2.7
+  min_ansible_version: "2.7"
   platforms:
   - name: Ubuntu
     versions:
