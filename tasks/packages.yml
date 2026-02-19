@@ -1,10 +1,23 @@
 - name: Install wm desktop (apt)
   become: true
-  ansible.builtin.apt:
-    name:
-    - "{{ ubuntu_desktop_wm_package }}" # e.g. lxde, ubuntu-desktop-minimal
-    - python3-pip
-    - python3-psutil
+  block:
+    # Installing ubuntu-desktop pulls in NetworkManager, which can cause the network
+    # interface to lose its IP mid-install. We set networkd as the renderer.
+  - name: Set netplan renderer to networkd
+    ansible.builtin.copy:
+      dest: /etc/netplan/99-stay-with-networkd.yaml
+      content: |
+        network:
+          version: 2
+          renderer: networkd
+      mode: '0600'
+
+  - name: Install wm desktop (apt)
+    ansible.builtin.apt:
+      name:
+      - "{{ ubuntu_desktop_wm_package }}" # e.g. lxde, ubuntu-desktop-minimal
+      - python3-pip
+      - python3-psutil
 
 - name: Start gdm3 service to get a graphical login
   become: true
